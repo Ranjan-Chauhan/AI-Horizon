@@ -2,10 +2,11 @@ import React from "react";
 import "../../css/HomeLast.css";
 import { GiSpinningTop } from "react-icons/gi";
 import ailogo from "../../assets/ailogo.png";
-import { Map, Marker } from "@vis.gl/react-google-maps";
+import { Map, Marker, APIProvider } from "@vis.gl/react-google-maps";
+
 import { FaLinkedin } from "react-icons/fa6";
 
-const HomeLast = () => {
+const HomeLast = ({ apiKey }) => {
   const center = { lat: 19.1139043, lng: 72.9181878 };
 
   return (
@@ -21,7 +22,7 @@ const HomeLast = () => {
 
       <div className="breadcrumb-section">
         <GiSpinningTop className="breadcrumb-icon" />
-        <span className="breadcrumb-text">> AI Horizons > Home</span>
+        <span className="breadcrumb-text"> AI Horizons Home</span>
       </div>
 
       <div className="quick-links-title">Quick Links</div>
@@ -95,8 +96,7 @@ const HomeLast = () => {
           )
         }
       >
-        {/* ✅ Wrap Map with ApiProvider */}
-        <ApiProvider apiKey="YOUR_GOOGLE_MAPS_API_KEY">
+        <APIProvider apiKey={apiKey}>
           <Map
             defaultZoom={13}
             defaultCenter={center}
@@ -104,29 +104,12 @@ const HomeLast = () => {
             disableDefaultUI
             style={{ width: "100%", height: "300px" }}
           >
+            {/* <AdvancedMarker position={center} /> */}
+
             <Marker position={center} />
           </Map>
-        </ApiProvider>
+        </APIProvider>
       </div>
-      {/* 
-      <div
-        className="map-container"
-        onClick={() =>
-          window.open(
-            "https://www.google.com/maps/place/KAILASH+BUSINESS+PARK,+Park+Site+Rd,+HMPL+Surya+Nagar,+Vikhroli+West,+Mumbai,+Maharashtra+400076/@19.1139446,72.9154082,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c7ea348f1cd3:0x9f0d02f9fba7f991!8m2!3d19.1139043!4d72.9181878!16s%2Fg%2F11bw3fnc5q?entry=ttu&g_ep=EgoyMDI1MDYyMi4wIKXMDSoASAFQAw%3D%3D",
-            +"_blank"
-          )
-        }
-      >
-        <Map
-          defaultZoom={13}
-          defaultCenter={center}
-          gestureHandling="greedy"
-          disableDefaultUI
-        >
-          <Marker position={center} />
-        </Map>
-      </div> */}
 
       <div className="contact-section">
         <h3 className="contact-title">Contact</h3>

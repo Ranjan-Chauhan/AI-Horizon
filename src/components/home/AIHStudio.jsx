@@ -44,7 +44,7 @@ const cards = [
 const AIHStudio = () => {
   return (
     <div className="flex justify-center items-center">
-      <div className="relative w-[1280px] h-[820px] bg-white px-8 py-12">
+      <div className="relative w-[1280px] h-[832px] bg-white px-8 py-12">
         {/* Background Vertical Lines */}
         <div className="absolute inset-0 z-0">
           {[...Array(9)].map((_, i) => (
@@ -72,13 +72,13 @@ const AIHStudio = () => {
               <div
                 key={colIdx}
                 className={`flex flex-col gap-6 ${
-                  colIdx === 1 ? "mt-[115px]" : colIdx === 2 ? "mt-[230px]" : ""
+                  colIdx === 1 ? "mt-[225px]" : colIdx === 2 ? "mt-[230px]" : ""
                 }`}
               >
                 {cards.slice(colIdx * 2, colIdx * 2 + 2).map((card, idx) => (
                   <div
                     key={idx}
-                    className="border border-[#000000] hover:border-4 hover:border-cyan-600 w-[202.64px] h-[225.75px] p-[5px]"
+                    className="border-4 border-[#000000] hover:border-cyan-600 w-[202.64px] h-[225.75px] p-[5px]"
                   >
                     <div className="flex justify-center items-center w-full h-full shadow-2xl bg-[#000000]">
                       <div className="flex flex-col justify-center items-center space-y-4 w-[143px] h-[146.4px]">

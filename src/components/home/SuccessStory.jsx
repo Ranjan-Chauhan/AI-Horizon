@@ -4,7 +4,7 @@ import SuccessStoryCard from "./cards/SuccessStoryCard";
 const SuccessStory = () => {
   return (
     <div className="flex justify-center items-center">
-      <div className="w-[1024px] h-[660px] flex justify-between items-center">
+      <div className="w-[1024px] h-[832px] flex justify-between items-center">
         <div className="flex flex-col justify-center items-start gap-2.5">
           <div className="w-[65px] h-[6px] rounded items-start bg-gradient-to-r from-[#F6A11F] to-[#AD10FF]"></div>
           <div className="w-[430px] text-black font-medium text-[51px]">

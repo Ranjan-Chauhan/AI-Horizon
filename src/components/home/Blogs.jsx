@@ -6,7 +6,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const Blogs = () => {
   return (
-    <div className="relative w-full h-[1024px] bg-no-repeat bg-cover flex items-center justify-center px-10">
+    <div className="relative w-full h-[832px] bg-no-repeat bg-cover flex items-center justify-center px-10">
       <div className="flex flex-col justify-center w-full max-w-[1280px] relative">
         {/* Left Side */}
         <div className="absolute left-0 top-[10%]">

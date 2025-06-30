@@ -13,10 +13,10 @@ const AIHAgents = () => {
       <div className="absolute inset-0 bg-[#151515] opacity-95"></div>
 
       {/* <div className="flex justify-center items-center w-[1280px] h-full"> */}
-      <div className="flex justify-between items-center w-[1280px] h-full space-x-10">
+      <div className="flex justify-between items-center w-[1280px] h-[832px] space-x-10">
         {/* Content on top */}
-        <div className="relative z-10 flex flex-col justify-center items-center w-[345px] h-[552px] space-y-10">
-          <div className="w-full h-[180px] text-[51px] flex flex-col justify-center items-center">
+        <div className="relative z-10 flex flex-col justify-center items-center w-[345px] h-[552px] gap-20 ">
+          <div className="w-full h-[180px] text-[51px] flex flex-col justify-center items-center font-roboto ">
             <h2 className=" font-bold text-[#17BCBC] text-center">
               AI<span className="text-orange-400">H</span> Agents{" "}
             </h2>
@@ -25,7 +25,7 @@ const AIHAgents = () => {
             </h2>
           </div>
 
-          <div className="w-[295px] h-[345px] text-[19px] flex flex-col justify-center items-center mt-10 text-[#FFFFFF] font-normal space-y-6">
+          <div className="w-[295px] h-[345px] text-[19px] flex flex-col justify-center items-center text-[#FFFFFF] font-normal space-y-6">
             <p className="w-full text-center">
               AIH Agents are powerful, customizable AI solutions built on our
               proprietary AIH Studio platform. Designed to address the unique
@@ -41,7 +41,7 @@ const AIHAgents = () => {
           </div>
         </div>
 
-        <div className="w-[765px] h-[472px]">
+        <div>
           <AIHAgentTab />
         </div>
       </div>
