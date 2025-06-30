@@ -1,5 +1,5 @@
 import React from 'react';
-import './WhoShouldPartner.css';
+import '../../css/WhoShouldPartner.css';
 
 const WhoShouldPartner = () => {
     const partnerTypes = [
