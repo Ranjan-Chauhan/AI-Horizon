@@ -4,7 +4,7 @@ import AIHAgents from "../components/home/AIHAgents";
 import AIHStudio from "../components/home/AIHStudio";
 import Blogs from "../components/home/Blogs";
 import HomePage from "../components/home/HomePage";
-import HomeLast from "../components/home/HomeLast";
+import Footer from "../components/common/Footer";
 
 const Home = () => {
   const googleMapsApiKey = "AIzaSyAWpGF4YuL4EUS37-tUy0xOeldVIKkVnVY";
@@ -16,7 +16,7 @@ const Home = () => {
       <AIHAgents />
       <AIHStudio />
       <Blogs />
-      <HomeLast apiKey={googleMapsApiKey} />
+      <Footer apiKey={googleMapsApiKey} />
     </>
   );
 };

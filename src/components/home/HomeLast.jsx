@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../css/HomeLast.css";
 import { GiSpinningTop } from "react-icons/gi";
 import ailogo from "../../assets/ailogo.png";
 import { Map, Marker, APIProvider } from "@vis.gl/react-google-maps";
-
 import { FaLinkedin } from "react-icons/fa6";
 
 const HomeLast = ({ apiKey }) => {
   const center = { lat: 19.1139043, lng: 72.9181878 };
+  const [currentPage, setCurrentPage] = useState("Home");
+
+  const handleLinkClick = (linkName) => {
+    setCurrentPage(linkName);
+  };
 
   return (
     <footer className="footer">
@@ -16,70 +20,83 @@ const HomeLast = ({ apiKey }) => {
           <span className="email-placeholder">Enter your Email ID</span>
           <button className="submit-button">Submit</button>
         </div>
-
         <h2 className="footer-title">Build your own private GenAI Now!</h2>
       </div>
 
       <div className="breadcrumb-section">
         <GiSpinningTop className="breadcrumb-icon" />
-        <span className="breadcrumb-text"> AI Horizons Home</span>
+        <span className="breadcrumb-text">AI Horizons {currentPage}</span>
       </div>
 
       <div className="quick-links-title">Quick Links</div>
 
       <div className="links-grid">
+        {/* Column 1: Company */}
         <div className="links-column">
           <h3 className="column-title">Company</h3>
           <ul className="links-list">
-            <li>
-              <a href="">About us</a>
-            </li>
-            <li>
-              <a href="">Partner</a>
-            </li>
-            <li>
-              <a href="">Strategic Investor</a>
-            </li>
-            <li>
-              <a href="">Leadership</a>
-            </li>
+            {["About us", "Partner", "Strategic Investor", "Leadership"].map(
+              (item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleLinkClick(item);
+                    }}
+                  >
+                    {item}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </div>
+
+        {/* Column 2: Resources */}
         <div className="links-column">
           <h3 className="column-title">Resources</h3>
           <ul className="links-list">
-            <li>
-              <a href="">Blogs</a>
-            </li>
-            <li>
-              <a href="">Case Studies</a>
-            </li>
-            <li>
-              <a href="">Comparisons</a>
-            </li>
-            <li>
-              <a href="">Industries</a>
-            </li>
-            <li>
-              <a href="">User Cases</a>
-            </li>
-            <li>
-              <a href="">Newsrooms</a>
-            </li>
+            {[
+              "Blogs",
+              "Case Studies",
+              "Comparisons",
+              "Industries",
+              "User Cases",
+              "Newsrooms",
+            ].map((item) => (
+              <li key={item}>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick(item);
+                  }}
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
+
+        {/* Column 3: Platform */}
         <div className="links-column">
           <h3 className="column-title">Platform</h3>
           <ul className="links-list">
-            <li>
-              <a href="">Career</a>
-            </li>
-            <li>
-              <a href="">Solutions</a>
-            </li>
-            <li>
-              <a href="">Enterprises</a>
-            </li>
+            {["Career", "Solutions", "Enterprises"].map((item) => (
+              <li key={item}>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick(item);
+                  }}
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -87,12 +104,15 @@ const HomeLast = ({ apiKey }) => {
       <div className="logo-container">
         <img src={ailogo} alt="AI Logo" className="ai-logo" />
       </div>
+
+      {/* Google Map */}
       <div
         className="map-container"
         onClick={() =>
           window.open(
-            "https://www.google.com/maps/place/KAILASH+BUSINESS+PARK,+Park+Site+Rd,+HMPL+Surya+Nagar,+Vikhroli+West,+Mumbai,+Maharashtra+400076/@19.1139446,72.9154082,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c7ea348f1cd3:0x9f0d02f9fba7f991!8m2!3d19.1139043!4d72.9181878!16s%2Fg%2F11bw3fnc5q?entry=ttu",
-            "_blank"
+            "https://www.google.com/maps/place/KAILASH+BUSINESS+PARK,+Park+Site+Rd,+HMPL+Surya+Nagar,+Vikhroli+West,+Mumbai,+Maharashtra+400076/@19.1139446,72.9154082,17z",
+            "_blank",
+            "noopener,noreferrer"
           )
         }
       >
@@ -104,13 +124,12 @@ const HomeLast = ({ apiKey }) => {
             disableDefaultUI
             style={{ width: "100%", height: "300px" }}
           >
-            {/* <AdvancedMarker position={center} /> */}
-
             <Marker position={center} />
           </Map>
         </APIProvider>
       </div>
 
+      {/* Contact Section */}
       <div className="contact-section">
         <h3 className="contact-title">Contact</h3>
         <p className="contact-address">
@@ -123,13 +142,13 @@ const HomeLast = ({ apiKey }) => {
         <FaLinkedin className="linkedin-icon" />
       </div>
 
+      {/* Footer Bottom Links */}
       <div className="footer-bottom-text">
         <a href="/privacy" className="footer-link">
           Privacy Policy
         </a>{" "}
-        |
+        |{" "}
         <a href="/terms" className="footer-link">
-          {" "}
           Terms and Conditions
         </a>{" "}
         | India

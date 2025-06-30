@@ -5,7 +5,7 @@ import AIHAgents from "./components/home/AIHAgents";
 import SuccessStory from "./components/home/SuccessStory";
 import Blogs from "./components/home/Blogs";
 import HomePage from "./components/home/HomePage";
-import HomeLast from "./components/home/HomeLast";
+// import HomeLast from "./components/home/HomeLast";
 
 import Home from "./pages/Home";
 
